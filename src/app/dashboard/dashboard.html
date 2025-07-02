@@ -1,0 +1,11 @@
+<div class="dashboard-container">
+  <div class="side-bar">
+    <p [class.active]="isActive('/home')" (click)="goToHome()">Home</p>
+    <p [class.active]="isActive('/about')" (click)="goToAbout()">Profile</p>
+  </div>
+
+  <div class="main-content">
+    <!-- <app-home-component></app-home-component> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

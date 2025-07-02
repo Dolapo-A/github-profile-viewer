@@ -1,0 +1,21 @@
+<div class="profile-info">
+  <input
+    type="text"
+    [(ngModel)]="username"
+    placeholder="Enter GitHub username"
+  />
+  <button (click)="ngOnInit()">Search</button>
+  <h1>Dashboard</h1>
+  <p *ngFor="let user of siteLists"><span>Full Name: </span>{{user.name}}</p>
+  <p *ngFor="let user of siteLists"><span>username: </span>{{user.login}}</p>
+  <p *ngFor="let user of siteLists"><span>Date Joined: </span>{{user.created_at}}</p>
+  <p *ngFor="let user of siteLists"><span>Bio: </span>{{user.bio}}</p>
+  <p *ngFor="let user of siteLists"><span>Repos: </span>{{user.public_repos}}</p>
+  <p *ngFor="let user of siteLists">
+    <span>followers: </span>{{user.followers}}
+  </p>
+  <p *ngFor="let user of siteLists">
+    <span>following: </span>{{user.following}}
+  </p>
+  <button (click)="goToAbout()">Go to Profile page</button>
+</div>
