@@ -1,21 +1,59 @@
 <div class="profile-info">
-  <input
-    type="text"
-    [(ngModel)]="username"
-    placeholder="Enter GitHub username"
-  />
-  <button (click)="ngOnInit()">Search</button>
-  <h1>Dashboard</h1>
-  <p *ngFor="let user of siteLists"><span>Full Name: </span>{{user.name}}</p>
-  <p *ngFor="let user of siteLists"><span>username: </span>{{user.login}}</p>
-  <p *ngFor="let user of siteLists"><span>Date Joined: </span>{{user.created_at}}</p>
-  <p *ngFor="let user of siteLists"><span>Bio: </span>{{user.bio}}</p>
-  <p *ngFor="let user of siteLists"><span>Repos: </span>{{user.public_repos}}</p>
-  <p *ngFor="let user of siteLists">
-    <span>followers: </span>{{user.followers}}
-  </p>
-  <p *ngFor="let user of siteLists">
-    <span>following: </span>{{user.following}}
-  </p>
-  <button (click)="goToAbout()">Go to Profile page</button>
+  <div class="search-bar" (click)="foucusInput()">
+    <input
+      type="text"
+      [(ngModel)]="username"
+      placeholder="Enter GitHub username"
+      #searchInput
+    />
+    <button (click)="ngOnInit()">Search</button>
+  </div>
+  <div class="profile">
+    <div class="profile-pic">
+      <img *ngFor="let user of siteLists" src="{{user.avatar_url}}" alt="" />
+    </div>
+    <div class="profile-details">
+      <div class="profile-name-date">
+        <div class="name-username">
+          <h2 *ngFor="let user of siteLists">{{user.name}}</h2>
+          <p *ngFor="let user of siteLists"><span>&#64;</span>{{user.login}}</p>
+        </div>
+        <p *ngFor="let user of siteLists">
+          <span>Joined </span>{{user.created_at | date:'mediumDate'}}
+        </p>
+      </div>
+
+      <p *ngFor="let user of siteLists">
+        {{user.bio || "This user has no bio"}}
+      </p>
+
+      <div class="repo-followers-following">
+        <p *ngFor="let user of siteLists">
+          <span>Repos</span>{{user.public_repos}}
+        </p>
+        <p *ngFor="let user of siteLists">
+          <span>followers</span>{{user.followers}}
+        </p>
+        <p *ngFor="let user of siteLists">
+          <span>following</span>{{user.following}}
+        </p>
+      </div>
+
+      <div class="social-links">
+        <p *ngFor="let user of siteLists">
+          <span><fa-icon [icon]="faLocationDot" ></fa-icon></span>{{user.location}}
+        </p>
+        <p *ngFor="let user of siteLists">
+          <span><fa-icon [icon]="faLink"></fa-icon></span>{{user.blog || "—"}}
+        </p>
+        <p *ngFor="let user of siteLists">
+          <span><fa-icon [icon]="faTwitter"></fa-icon></span>{{user.twitter_username || "—"}}
+        </p>
+        <p *ngFor="let user of siteLists">
+          <span><fa-icon [icon]="faBuilding"></fa-icon></span>{{user.company || "—"}}
+        </p>
+      </div>
+      <!-- <button (click)="goToAbout()">Go to Profile page</button> -->
+    </div>
+  </div>
 </div>

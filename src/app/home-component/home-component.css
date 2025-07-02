@@ -1,3 +1,112 @@
 .profile-info{
-    
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
 }
+
+.search-bar{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    margin-bottom: 3.2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar:focus-within{
+    border: 1.5px solid var(--secondary-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+}
+
+.search-bar input{
+    background-color: transparent;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.profile{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    gap: 4rem;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+}
+
+.profile-pic img{
+    width: 150px;
+    border-radius: 100%;
+}
+
+.profile-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1.5rem;
+}
+
+.profile-name-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.profile-name-date h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.profile-name-date p{
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #666;
+}
+
+.repo-followers-following{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color-light);
+    color: var(--secondary-color);
+    border-radius: 1rem;
+}
+
+.repo-followers-following p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.repo-followers-following p span{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.social-links{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.social-links p{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-links p span {
+    /* width: 1.5rem; */
+}
+
+::ng-deep fa-icon {
+    width: 1.5rem; /* Set the width of the icons */
+    height: 1.5rem; /* Optional: Set the height to maintain aspect ratio */
+  }
